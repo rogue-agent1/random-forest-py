@@ -16,9 +16,10 @@ class Stump:
                 if not l or not r: continue
                 gini = len(l)/len(y)*(1-sum((v/len(l))**2 for v in Counter(l).values())) + \
                        len(r)/len(y)*(1-sum((v/len(r))**2 for v in Counter(r).values()))
-                if gini < best: best=gini; self.feat=f; self.thresh=t
-                                self.left=Counter(l).most_common(1)[0][0]
-                                self.right=Counter(r).most_common(1)[0][0]
+                if gini < best:
+                    best=gini; self.feat=f; self.thresh=t
+                    self.left=Counter(l).most_common(1)[0][0]
+                    self.right=Counter(r).most_common(1)[0][0]
     def predict(self, x): return self.left if x[self.feat]<=self.thresh else self.right
 
 class RandomForest:
