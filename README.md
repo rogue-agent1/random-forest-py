@@ -1,1 +1,5 @@
-# random-forest-py\n\nZero-dependency Python CLI.\n\n```bash\npython3 random_forest.py\n```\n
+# random-forest-py
+
+Random forest classifier with bootstrap aggregation
+
+Zero-dependency Python. Stdlib only.
